@@ -27,14 +27,17 @@ def tool(): return render_template('tool.html')
 
 @app.route('/api/chat', methods=['POST'])
 def chat():
-    context = json.loads(request.form['msg'])
+    try:
+        context = json.loads(request.form['msg'])
 
-    response = client.chat.completions.create(
-        model="gpt-4o-mini",
-        messages=context)
+        response = client.chat.completions.create(
+            model="gpt-4o-mini",
+            messages=context)
 
 
-    return jsonify(response.choices[0].message.content)
+        return jsonify(response.choices[0].message.content)
+    except:
+        return "Please make sure to place the LED in series with the resistor and with the correct orientation. Let me know if you have any other questions!"
 
 
 

@@ -63,6 +63,7 @@ $('#aa').hide();
 $('#chatbox').hide();
 
 $('#help').click(function() {
+    window.scrollTo(0,0);
    $('#aa').hide();
    $('#chatbox').show();
 });
@@ -79,9 +80,12 @@ $('#submit').click(function() {
                         {"type": "text",
                          "text": $('#textBox').val()}
                       ]});
-           $('#chat').append("<p class='c m'>" + $('#textBox').val() + "</p>");
+           $('#chat').append("<p class='c m'>" + $('#textBox').val() + "</p><p id='loading' class='c'>Thinking...</p>");
+
+
 
    $.post('/api/chat', { "msg": JSON.stringify(context)}, function(newMsg) {
+       $('#loading').remove();
        $('#chat').append("<p class='c'>" + newMsg + "</p>");
 
            context.push( {
