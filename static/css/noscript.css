@@ -1,0 +1,15 @@
+/*
+	noscript.css
+	Used from Phantom source code under CCA 3.0 license
+	html5up.net | @ajlkn
+*/
+
+/* Tiles */
+
+body.is-preload .tiles article {
+  -moz-transform: none;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+  opacity: 1;
+}

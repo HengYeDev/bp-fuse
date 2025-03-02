@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!--
+	/tool
+	Derived from Phantom source code under CCA 3.0 license
+	html5up.net | @ajlkn
+	by C. Kalapati
+-->
+<html>
+  <head>
+    <title>Circuit Analyzer</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="static/css/main.css" />
+    <noscript
+      ><link rel="stylesheet" href="static/css/noscript.css"
+    /></noscript>
+  </head>
+  <body class="is-preload">
+    <div id="wrapper">
+      
+      
+
+      <!-- Main -->
+      <div id="main">
+          <div class="custom-nav">
+            <ul class="nav-ul">
+              <li id="logo-li">
+                <a style="margin-left: 1em;" href="/" class="logo">
+                  <span class="symbol"><img id="logo" src="static/images/logo.svg" style="margin-right:8px" alt="" /></span>
+                  <span class="title">Fuse</span>
+                </a>
+              </li>
+            </ul>
+            <ul class="nav-ul" style="float:right; margin-top:-50px; margin-right: 20px;">
+                <li class="menu-item"><a href="/">Home</a></li>
+              <li class="menu-item"><a href="tool">Circuit Analyzer</a></li>
+            </ul>
+          </div>
+        <div class="inner" style="margin-top:4em;">
+            <div style="width:40%; float: left;" id="chatbox">
+                <h1 style="margin-bottom:0.5em">CoulombChat</h1>
+                <p>Talk to CoulombChat, an LLM </p>
+                <div id="chat" style="border: 20px solid white; border-radius: 20px; height: 60vh"></div>
+                <input type="text" id="textBox" placeholder="Ask CoulombChat a question..." style="width: 100%">
+                <button type="button" id="submit">Send</button>
+            </div>
+            <div style="width:40%; float: left" id="main2">
+                <h1 style="margin-bottom:0.5em">Circuit Analyzer</h1>
+                <p>
+                Upload an image of a circuit, and our AI will analyze it to find select components in it and to provide analysis. Smart component identification is still in beta, and because of current
+                time constraints, only supports resistor identification at this time.
+                </p>
+                <div style="width:100%">
+                    <label for="upload-circuit">Upload a circuit to analyze:</label>
+                    <input type="file" id="upload-circuit" name="upload-circuit" accept="image/png, image/jpeg" />
+                </div>
+                <button style="margin-top:40px" id="try">Run</button>
+            </div>
+            <div style="width:40%; float: left" id="aa">
+                <h1 style="margin-bottom:0.5em">Circuit analyzed!</h1>
+                <h4>AI analysis</h4>
+                <p id="ai"></p>
+                <button id="help" style="margin:10px" type="button">I need further help</button>
+                <a href="tool" style="margin:10px">
+                    <button id="new-photo">
+                        New Photo
+                    </button>
+                </a>
+                <button id="save" style="margin:10px">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                      <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                      <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                    </svg>
+                    Save Results
+                </button>
+            </div>
+         <div id="uploaded-img" class="img-container">
+                <img id="a" class="display-image" style="position:sticky" src="static/images/imgplaceholder.png">
+                <div id="spinner" style="display:none">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif">
+                </div>
+            </div>
+        </div>
+
+      </div>
+
+      <footer id="footer" style="background-color: white;">
+        <div class="inner">
+          <ul class="copyright">
+            <li>Created by Charlie K. and Heng Y. for Blueprint 2025</li>
+            <li>
+              Website design derived from
+              <a href="http://html5up.net">HTML5 UP</a> under CCA 3.0
+            </li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script src="static/js/main.js"></script>
+  </body>
+</html>
